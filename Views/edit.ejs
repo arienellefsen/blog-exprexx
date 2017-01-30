@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+
+<h1> Edit Page <%= blog.title %></h1>
+
+<form action="/blogs/<%= blog._id%>?_method=PUT" method="POST">
+  Title:<br>
+  <input type="text" name="blog[title]" value="<%=blog.title %>"><br>
+  Image:<br>
+  <input type="text" name="blog[image]" value="<%=blog.image%>"><br><br>
+  Body:<br>
+  <textarea name="blog[body]"><%=blog.body %></textarea><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<% include ./partials/footer %>
